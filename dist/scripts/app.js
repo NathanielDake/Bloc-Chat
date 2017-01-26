@@ -1,6 +1,7 @@
 (function () {
     
     function config($stateProvider, $locationProvider) {
+        
         $locationProvider                                   
             .html5Mode({                                    
                 enabled: true,
@@ -8,9 +9,11 @@
         });
         
         $stateProvider                                      
-            .state('main', {                             
-                url:'/',                                                           
-            });                                            
+            .state('home', {                             
+                url:'/',
+                controller: 'HomeCtrl as home',
+                templateUrl: '/templates/home.html'
+                });                                            
         
             
     }
@@ -20,3 +23,9 @@
         .config(config);                                                                                      
                                                                                                                    
 })();  
+
+
+/** 
+* Main modules blocChat that will hold services, controllers,
+* and configure the states to corresponding templates
+*/

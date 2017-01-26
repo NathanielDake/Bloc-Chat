@@ -1,1 +1,17 @@
-<h1>Home Page</h1>
+<section class="jumbotron" id="jumbotron-style">
+    <h1 id="home-title">Bloc Chat</h1>
+    <p id="home-tagline">Your #1 chat option</p>
+</section>
+
+<div class="sidebar col-md-3">
+    <div class="header">
+        <p id="chatroom-title">Chat Rooms</p>
+    </div>
+    
+    <section class="chatrooms-list">
+        <div ng-repeat="room in home.chatRooms" class="chatrooms">
+            <p>{{room.$value}}</p>
+        </div>
+    
+    </section>
+</div>
