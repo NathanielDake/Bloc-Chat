@@ -1,30 +1,49 @@
 (function () {
     function Room($firsbaseArray) {
         
-        var Room = {
-         
-        };
         
-        /** reference to Firebase database 'rooms' (that holds rooms 1, 2, 3)
+        /* reference to Firebase database 'rooms' (that holds rooms 1, 2, 3)
         * The child() method retrieves the children of 'rooms' (Room 1,
         * Room 2, Room 3)  
         */
         var ref = firebase.database().ref().child("rooms");  
         
-        /** $firebaseArray service is used to make sure that data is returned as 
+        /* $firebaseArray service is used to make sure that data is returned as 
         * an array
         */
-        var rooms = $firsbaseArray(ref);
+        var roomsRef = $firsbaseArray(ref);
         
-        
-        /**
-        * this will return an object with the property 'all',
-        * that when called in home.html template will correspond 
-        * to 'rooms', and array of firebase room objects
+        /*
+        * object holding getRooms and addRoom function
         */
-        return {
-            all: rooms  
+        var rooms = {
+            getRooms: getRooms,
+            addRoom: addRoom
         };
+        
+        return rooms;
+        
+        /*
+        * @function getRooms
+        * @gets all rooms from firebase array in database 
+        */
+        function getRooms() {
+            return {
+                all: roomsRef
+            }
+        };
+        
+        /*
+        * @function addRoom
+        * @adds a room to firebase array in database 
+        * @param string
+        */
+        function addRoom(name) {
+            roomsRef.$add(name);
+            console.log(name);
+            console.log(rooms)
+        };
+            
     }
 
     
