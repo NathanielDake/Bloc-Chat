@@ -1,24 +1,26 @@
 (function () {
-    function Room($firsbaseArray) {
+    function Room($firebaseArray) {
         
-        
+        var firebaseRef = firebase.database().ref();
         /* reference to Firebase database 'rooms' (that holds rooms 1, 2, 3)
         * The child() method retrieves the children of 'rooms' (Room 1,
         * Room 2, Room 3)  
         */
-        var ref = firebase.database().ref().child("rooms");  
+        var ref = firebase.database().ref().child("rooms"); 
+        
         
         /* $firebaseArray service is used to make sure that data is returned as 
         * an array
         */
-        var roomsRef = $firsbaseArray(ref);
+        var roomsRef = $firebaseArray(ref);
         
         /*
         * object holding getRooms and addRoom function
         */
         var rooms = {
             getRooms: getRooms,
-            addRoom: addRoom
+            addRoom: addRoom,
+            getMessages: getMessages
         };
         
         return rooms;
@@ -28,6 +30,7 @@
         * @gets all rooms from firebase array in database 
         */
         function getRooms() {
+            console.log(roomsRef); //leaving off here. trying to get room to list messages (go through dinosaur exampe and onchild method again)
             return {
                 all: roomsRef
             }
@@ -40,8 +43,11 @@
         */
         function addRoom(name) {
             roomsRef.$add(name);
-            console.log(name);
-            console.log(rooms)
+        };
+        
+        //function used to get messages
+        function getMessages(roomId) {
+            return $firebaseArray(firebaseRef.child("messages").orderByChild("roomId").equalTo(roomId));  
         };
             
     }

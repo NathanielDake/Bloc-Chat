@@ -42,6 +42,22 @@
     font-size: 2rem;
 }
 
+.individual-room:hover {
+    cursor: pointer;
+}
+
 .sidebar .header .new-chatroom {
     text-align: center;
 }
+
+.chatroom {
+    height: 500px;
+    float: right;
+    background-color: ghostwhite;
+}
+
+
+
+
+
+
