@@ -30,7 +30,6 @@
         * @gets all rooms from firebase array in database 
         */
         function getRooms() {
-            console.log(roomsRef); //leaving off here. trying to get room to list messages (go through dinosaur exampe and onchild method again)
             return {
                 all: roomsRef
             }
