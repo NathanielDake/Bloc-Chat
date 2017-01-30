@@ -2,6 +2,10 @@
     function Room($firebaseArray) {
         
         var firebaseRef = firebase.database().ref();
+        
+        
+        
+        
         /* reference to Firebase database 'rooms' (that holds rooms 1, 2, 3)
         * The child() method retrieves the children of 'rooms' (Room 1,
         * Room 2, Room 3)  

@@ -1,7 +1,7 @@
 (function() {
     
 
-    function HomeCtrl(Room, $uibModal){  
+    function HomeCtrl(Room, Message, $uibModal){  
         
         //shorthand for this ($scope variable for home controller)
         var vm = this;
@@ -22,7 +22,10 @@
         //variable used to hold the room service
         vm.roomService = Room;
         
-        vm.messages = null;
+        vm.sendMessage = function() {
+            Message.send(vm.newMessage, vm.currentRoom.$id);
+            vm.newMessage = '';
+        };
         
         //function that sets the current chatroom to the name clicked
         vm.setCurrentChatRoom = function(clickedRoom) {
@@ -64,7 +67,7 @@
     
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room','$uibModal', HomeCtrl]);     
+        .controller('HomeCtrl', ['Room', 'Message','$uibModal', HomeCtrl]);     
 })();                                                                       
 
 /**
