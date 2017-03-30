@@ -1,7 +1,6 @@
-## Bloc Frontend Project Starter
+## OptimaChat
 
-A starter application for student projects in Bloc's [Frontend Web Development Course](https://www.bloc.io/frontend-development-bootcamp).
-
+An app where you can create chat rooms and send messages.
 ## Configuration
 
 Start by cloning the repository:
