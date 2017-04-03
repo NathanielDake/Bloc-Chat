@@ -3,9 +3,10 @@
 }
 
 #jumbotron-style {
-    background-color: lightcyan; 
+    background-color: rgba(221, 194, 239, 0.18);
     border-radius: 5px;
     margin-bottom: 0px;
+    color: black;
 }
 
 #home-tagline {
@@ -14,7 +15,7 @@
 
 .sidebar {
     clear: both;
-    background-color: antiquewhite;
+    background-color: rgba(232, 250, 136, 0.18);
     height: 500px;
     border-radius: 5px;
 }
@@ -53,11 +54,39 @@
 .chatroom {
     height: 500px;
     float: right;
-    background-color: ghostwhite;
+    background-color: rgba(248, 248, 255, 0.05);
 }
 
 
 
 
 
+.body-background {
+    background-image: url("../assets/images/wood.png");
+}
 
+.container {
+    color: #292527;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    color: #ffffff;
+    background-color: #9fa3b1;
+    border-color: #402c1f;
+}
+
+.message-box {
+    background: rgba(44, 47, 47, 0.11);
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.input-box {
+    position:absolute;
+    bottom:0;
+    padding: 10px;
+}

@@ -1,5 +1,6 @@
+<div class="container">
 <section class="jumbotron" id="jumbotron-style">
-    <h1 id="home-title">Bloc Chat</h1>
+    <h1 id="home-title">OptimaChat</h1>
     <p id="home-tagline">Your #1 chat option</p>
 </section>
 
@@ -7,7 +8,7 @@
     <div class="header">
         <p id="chatroom-title">Chat Rooms</p>
             <div class="new-chatroom">
-                <button class="btn btn-info" ng-click="home.openModal()"><strong>+</strong> New Chat Room</button>
+                <button class="btn btn-warning" ng-click="home.openModal()"><strong>+</strong> New Chat Room</button>
             </div>
     </div>
     
@@ -20,17 +21,19 @@
 </div>   
 
 <div class="col-md-9 chatroom">
-    <h3 ng-show="home.currentRoomVisible">{{home.currentRoom.name}}</h3>
-    <p ng-repeat="message in home.messages">
+    <h3 class="test" ng-show="home.currentRoomVisible">{{home.currentRoom.name}}</h3>
+    <p class="message-box" ng-repeat="message in home.messages">
         <strong>{{message.username}} ({{ message.sentAt }}): </strong> "{{message.content}}"
     </p>
-    
+    <div class="input-box">
     <form>
         <div>
-            <input type="text" placeholder="Write your message here..." class="form-control" ng-model="home.newMessage">        
+            <input type="text" size="100" placeholder="Write your message here..." class="form-control" ng-model="home.newMessage">
         </div>
-        <button class="btn btn-success" type="button" ng-click="home.sendMessage()">Send</button>
+        <button class="btn btn-warning" type="button" ng-click="home.sendMessage()">Send</button>
 
     </form>
+    </div>
 
+</div>
 </div>
